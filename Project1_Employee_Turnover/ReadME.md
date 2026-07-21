@@ -67,31 +67,42 @@ Additional engineered features include:
 ## Machine Learning Pipeline
 
 ```
-Dataset
-      │
-      ▼
-Exploratory Analysis
-      │
-      ▼
-Data Preprocessing
-      │
-      ▼
-Feature Engineering
-      │
-      ▼
-Train-Test Split
-      │
-      ▼
-Feature Scaling
-      │
-      ▼
-Model Training
-      │
-      ▼
-Model Evaluation
-      │
-      ▼
-Model Comparison
+                               Employee Dataset
+	                                  │
+	                                  ▼
+	                    Exploratory Data Analysis (EDA)
+	                                  │
+	                                  ▼
+	                 Data Cleaning & Feature Engineering
+	                                  │
+	                                  ▼
+	                      Train-Test Split (80/20)
+	                     X_train, X_test, y_train, y_test
+	                    ┌──────────────┴──────────────┐
+	                    │                             │
+	                    ▼                             ▼
+	         Original Features                 StandardScaler
+	                    │                             │
+	                    ▼                             ▼
+	     Baseline Logistic Regression      Scaled Features
+	                    │                             │
+	                    │          ┌──────────────────┼──────────────────┐
+	                    │          │                  │                  │
+	                    │          ▼                  ▼                  ▼
+	                    │  Logistic Regression   Lasso Logistic CV   Ridge Logistic CV
+	                    │      (Scaled)             (L1 + CV)            (L2 + CV)
+	                    │          │                  │                  │
+	                    └──────────┴──────────────────┴──────────────────┘
+	                                       │
+	                                       ▼
+	                     Performance Comparison of All Models
+	                                       │
+	                                       ▼
+	         Accuracy • Precision • Recall • F1-score • Confusion Matrix
+	                                       │
+	                                       ▼
+                         Best Model Selection & Key Insights
+
 ```
 
 ---
@@ -121,6 +132,8 @@ Implemented using
 - solver = "saga"
 
 Cross-validation was used to automatically determine the optimal inverse regularization strength (**C**).
+<img width="1284" height="831" alt="image" src="https://github.com/user-attachments/assets/1938ec7a-3114-4169-b03a-3b28d6dae761" />
+
 
 ---
 
@@ -245,10 +258,8 @@ Topics I explored during implementation include:
 ## Repository Structure
 
 ```
-├── dataset/
 ├── notebooks/
 │      project2_EmployeeTurnover.ipynb
-├── images/
 ├── README.md
 └── requirements.txt
 ```
