@@ -1,0 +1,15 @@
+# SmartCart: E-commerce Customer Segmentation
+# Core data analysis and visualization
+pandas
+matplotlib
+seaborn
+
+# Machine learning: preprocessing, PCA, clustering, and evaluation
+scikit-learn
+
+# Elbow-method knee detection
+kneed[plot]
+
+# Notebook environment
+jupyterlab
+notebook
