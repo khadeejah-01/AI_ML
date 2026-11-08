@@ -11,7 +11,7 @@
 7. [Debugging Log & Lessons Learned](#7-debugging-log--lessons-learned)
 8. [Limitations & Future Work](#8-limitations--future-work)
 9. [Conclusion](#9-conclusion)
-10. [References within this repository] (#10-References-within-this-repository) 
+10. [References within this repository](#10-References-within-this-repository) 
 ---
 
 ## 1. Overview
@@ -120,7 +120,7 @@ As K increases, WCSS decreases because more clusters generally allow points to b
 
 
 A visual crossing between the lines on a dual-axis chart is not a formal mathematical rule for choosing K: the apparent crossing depends on the separate axis scales. The Elbow shape, silhouette values, segment interpretability, and downstream usefulness should be considered together. The original combined chart is therefore not used as conclusive evidence for K=4.
-![Silhouette scores for K=2 through K=10](images/silhouette_scores.png)
+![WCSS and silhouette combined plot](images/choosingK.png)
 
 
 ### 4.2 Algorithms compared
